@@ -1,5 +1,6 @@
 package com.mattgroy.FirstApplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -22,7 +23,10 @@ public class AuthActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             if (isEmailValid() && isPasswordValid()) {
-                //TODO Переход в приложение
+                Intent startProfileIntent = new Intent(AuthActivity.this, ProfileActivity.class);
+                startProfileIntent.putExtra(ProfileActivity.EMAIL_KEY, etLogin.getText().toString());
+                startProfileIntent.putExtra(ProfileActivity.PASSWORD_KEY, etPassword.getText().toString());
+                startActivity(startProfileIntent);
             } else {
                 showMessage(R.string.auth_input_error);
             }
@@ -53,10 +57,10 @@ public class AuthActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ac_auth);
 
-        etLogin = findViewById(R.id.etLogin);
-        etPassword = findViewById(R.id.etPassword);
-        btnEnter = findViewById(R.id.btnEnter);
-        btnRegister = findViewById(R.id.btnRegister);
+        etLogin = findViewById(R.id.ac_auth_et_login);
+        etPassword = findViewById(R.id.ac_auth_et_password);
+        btnEnter = findViewById(R.id.ac_auth_btn_enter);
+        btnRegister = findViewById(R.id.ac_auth_btn_register);
 
         btnEnter.setOnClickListener(onEnterClickListener);
         btnRegister.setOnClickListener(onRegisterClickListener);
