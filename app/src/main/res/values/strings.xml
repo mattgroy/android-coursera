@@ -5,4 +5,6 @@
     <string name="auth_enter">Sign in</string>
     <string name="auth_register">Sign up</string>
     <string name="auth_input_error">Wrong login or password</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 </resources>
