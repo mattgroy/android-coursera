@@ -27,19 +27,19 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/buttonEnter"
+            android:id="@+id/btnEnter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/auth_sign_in"
+            android:text="@string/auth_enter"
             />
 
         <Button
-            android:id="@+id/buttonRegister"
+            android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/auth_sign_up"
+            android:text="@string/auth_register"
             />
 
     </LinearLayout>
