@@ -2,6 +2,6 @@
     <string name="app_name">FirstApplication</string>
     <string name="hint_login">Login</string>
     <string name="hint_password">Password</string>
-    <string name="auth_sign_in">Sign in</string>
-    <string name="auth_sign_up">Sign up</string>
+    <string name="auth_enter">Sign in</string>
+    <string name="auth_register">Sign up</string>
 </resources>
