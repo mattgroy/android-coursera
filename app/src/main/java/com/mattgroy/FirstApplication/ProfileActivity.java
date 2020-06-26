@@ -9,8 +9,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    public static final String EMAIL_KEY = "EMAIL_KEY";
-    public static final String PASSWORD_KEY = "PASSWORD_KEY";
+    public static final String USER_KEY = "USER_KEY";
 
     private AppCompatImageView ivPhoto;
     private TextView tvLogin;
@@ -33,8 +32,9 @@ public class ProfileActivity extends AppCompatActivity {
         tvPassword = findViewById(R.id.ac_profile_tv_password);
 
         Bundle bundle = getIntent().getExtras();
-        tvLogin.setText(bundle.getString(EMAIL_KEY));
-        tvPassword.setText(bundle.getString(PASSWORD_KEY));
+        User user = (User) bundle.get(USER_KEY);
+        tvLogin.setText(user.getLogin());
+        tvPassword.setText(user.getPassword());
 
         ivPhoto.setOnClickListener(onPhotoClickedListener);
     }
