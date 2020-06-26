@@ -4,4 +4,5 @@
     <string name="hint_password">Password</string>
     <string name="auth_enter">Sign in</string>
     <string name="auth_register">Sign up</string>
+    <string name="auth_input_error">Wrong login or password</string>
 </resources>
