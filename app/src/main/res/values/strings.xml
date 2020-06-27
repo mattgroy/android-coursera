@@ -1,3 +1,5 @@
 <resources>
+    <string name="ac_main_continue">Continue</string>
     <string name="app_name">Coursera Android</string>
+    <string name="hint_text_enter">Enter text</string>
 </resources>
