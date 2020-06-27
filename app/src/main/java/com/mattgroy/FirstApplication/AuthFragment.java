@@ -22,6 +22,7 @@ public class AuthFragment extends Fragment {
     private EditText etPassword;
     private Button btnEnter;
     private Button btnRegister;
+
     private View.OnClickListener onEnterClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -30,14 +31,16 @@ public class AuthFragment extends Fragment {
                 startProfileIntent.putExtra(ProfileActivity.USER_KEY, new User(etLogin.getText().toString(), etPassword.getText().toString()));
                 startActivity(startProfileIntent);
             } else {
-                showMessage(R.string.auth_input_error);
+                showMessage(R.string.input_error);
             }
         }
     };
     private View.OnClickListener onRegisterClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            //TODO Обработка нажатий
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.ac_single_fragment_container, RegistrationFragment.newInstance())
+                    .commit();
         }
     };
 
@@ -67,10 +70,10 @@ public class AuthFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fr_auth, container, false);
 
-        etLogin = v.findViewById(R.id.ac_auth_et_login);
-        etPassword = v.findViewById(R.id.ac_auth_et_password);
-        btnEnter = v.findViewById(R.id.ac_auth_btn_enter);
-        btnRegister = v.findViewById(R.id.ac_auth_btn_register);
+        etLogin = v.findViewById(R.id.fr_auth_et_login);
+        etPassword = v.findViewById(R.id.fr_auth_et_password);
+        btnEnter = v.findViewById(R.id.fr_auth_btn_enter);
+        btnRegister = v.findViewById(R.id.fr_auth_btn_register);
 
         btnEnter.setOnClickListener(onEnterClickListener);
         btnRegister.setOnClickListener(onRegisterClickListener);

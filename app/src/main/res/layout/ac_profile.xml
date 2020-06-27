@@ -20,7 +20,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/email" />
+            android:text="@string/hint_email" />
 
         <TextView
             android:id="@+id/ac_profile_tv_email"
@@ -30,7 +30,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/password" />
+            android:text="@string/hint_password" />
 
         <TextView
             android:id="@+id/ac_profile_tv_password"
