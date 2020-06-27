@@ -1,10 +1,21 @@
 <resources>
     <string name="app_name">FirstApplication</string>
-    <string name="hint_login">Login</string>
-    <string name="hint_password">Password</string>
+
     <string name="auth_enter">Sign in</string>
     <string name="auth_register">Sign up</string>
-    <string name="auth_input_error">Wrong login or password</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
+
+    <string name="hint_email">Email</string>
+    <string name="hint_login">Login</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_password_repeat">Repeat password</string>
+
+    <string name="input_error">Wrong login or password</string>
+
+    <string name="login_error">Wrong login or password</string>
+    <string name="login_register_error">Login is not available!</string>
+    <string name="login_register_success">Successful!</string>
+
+    <string name="logout">Logout</string>
+
+    <string name="register">Continue</string>
 </resources>
