@@ -1,5 +1,7 @@
 <resources>
-    <string name="ac_main_continue">Continue</string>
     <string name="app_name">Coursera Android</string>
+    <string name="btn_continue">Continue</string>
+    <string name="btn_search">Search</string>
     <string name="hint_text_enter">Enter text</string>
+    <string name="stub">The quick brown fox jumps over the lazy dog</string>
 </resources>

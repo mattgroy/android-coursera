@@ -1,5 +1,6 @@
 package com.mattgroy.courseraandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -19,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             if (isTextValid()) {
                 showMessage(etText.getText());
+
+                Intent startSearchActivityIntent = new Intent(MainActivity.this, SearchActivity.class);
+                startSearchActivityIntent.putExtra(SearchActivity.QUERY_KEY, etText.getText().toString());
+                startActivity(startSearchActivityIntent);
             }
         }
     };
