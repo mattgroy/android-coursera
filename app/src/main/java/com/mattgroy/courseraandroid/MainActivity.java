@@ -11,28 +11,55 @@ import android.widget.EditText;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Главное (стартовый) экран приложения.
+ * Принимает от пользователя поисковый запрос и переключает на следующий экран.
+ *
+ * @author Max Ratkov
+ * @since 28.06.2020
+ */
 public class MainActivity extends AppCompatActivity {
 
-    private EditText etText;
-    private Button btnContinue;
-
+    /**
+     * Поле ввода поискового запроса.
+     */
+    private EditText etQuery;
+    /**
+     * Обработчик нажатия кнопки перехода на следущий экран.
+     * По нажатии на кнопку показывает {@link android.widget.Toast} с введённым поисковым запросом
+     * и переключает на {@link SearchActivity Activity поиска в интернете}.
+     */
     private final View.OnClickListener onContinueClickListener = new View.OnClickListener() {
         @Override
         public void onClick(final View view) {
-            if (isTextValid()) {
-                Utils.showMessage(MainActivity.this, etText.getText());
+            if (isQueryValid()) {
+                Utils.showToast(MainActivity.this, etQuery.getText());
 
                 Intent startSearchActivityIntent = new Intent(MainActivity.this, SearchActivity.class);
-                startSearchActivityIntent.putExtra(SearchActivity.QUERY_KEY, etText.getText().toString());
+                startSearchActivityIntent.putExtra(SearchActivity.QUERY_KEY, etQuery.getText().toString());
                 startActivity(startSearchActivityIntent);
             }
         }
     };
+    /**
+     * Кнопка перехода на следующий экран.
+     */
+    private Button btnContinue;
 
-    private boolean isTextValid() {
-        return !TextUtils.isEmpty(etText.getText());
+    /**
+     * Проверка валидности поискового запроса.
+     *
+     * @return является ли запрос валидным.
+     */
+    private boolean isQueryValid() {
+        return !TextUtils.isEmpty(etQuery.getText());
     }
 
+    /**
+     * Подготовка и запуск анимации.
+     *
+     * @param animation анимация.
+     */
     private void animate(final AnimationDrawable animation) {
         animation.setEnterFadeDuration(10);
         animation.setExitFadeDuration(5000);
@@ -44,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ac_main);
 
-        etText = findViewById(R.id.ac_main_et_text);
+        etQuery = findViewById(R.id.ac_main_et_query);
         btnContinue = findViewById(R.id.ac_main_btn_continue);
         AnimationDrawable background = (AnimationDrawable) findViewById(R.id.ac_main_layout).getBackground();
 

@@ -2,6 +2,6 @@
     <string name="app_name">Coursera Android</string>
     <string name="btn_continue">Continue</string>
     <string name="btn_search">Search</string>
-    <string name="hint_text_enter">Enter text</string>
+    <string name="hint_query_enter">Enter search query</string>
     <string name="stub">The quick brown fox jumps over the lazy dog</string>
 </resources>

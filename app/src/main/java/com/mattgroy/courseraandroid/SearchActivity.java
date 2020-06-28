@@ -14,15 +14,36 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
+/**
+ * Экран запуска поискового запроса.
+ *
+ * @author Max Ratkov
+ * @since 28.06.2020
+ */
 public class SearchActivity extends AppCompatActivity {
+    /**
+     * Ключ для получения поискового запроса с главного экрана.
+     */
     public static final String QUERY_KEY = "QUERY_KEY";
 
+    /**
+     * Кодировка поискового запроса.
+     */
     private static final String SEARCH_ENCODING = "UTF-8";
+    /**
+     * Адрес поисковой системы.
+     */
     private static final String SEARCH_ADDRESS = "http://www.google.com/#q=";
 
+    /**
+     * Поле с введённым пользователем поисковым запросом.
+     */
     private TextView tvQuery;
-    private Button btnSearch;
-
+    /**
+     * Обработчик нажатия кнопки выполнения поискового запроса.
+     * По нажатии на кнопку открывает браузер с введённым в
+     * {@link SearchActivity#SEARCH_ADDRESS поисковик} {@link SearchActivity#tvQuery запросом}.
+     */
     private final View.OnClickListener onSearchClickedListener = new View.OnClickListener() {
         @Override
         public void onClick(final View view) {
@@ -34,18 +55,33 @@ public class SearchActivity extends AppCompatActivity {
             startActivity(intent);
         }
     };
+    /**
+     * Кнопка выполнения поискового запроса.
+     */
+    private Button btnSearch;
 
+    /**
+     * Кодирование поискового запроса.
+     *
+     * @param query поисковый запрос.
+     * @return поисковый запрос в кодировке {@link SearchActivity#SEARCH_ENCODING}.
+     */
     @Nullable
     private String encodeQuery(final String query) {
-        String escapedQuery = null;
+        String encodedQuery = null;
         try {
-            escapedQuery = URLEncoder.encode(query, SEARCH_ENCODING);
+            encodedQuery = URLEncoder.encode(query, SEARCH_ENCODING);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        return escapedQuery;
+        return encodedQuery;
     }
 
+    /**
+     * Подготовка и запуск анимации.
+     *
+     * @param animation анимация.
+     */
     private void animate(final AnimationDrawable animation) {
         animation.setEnterFadeDuration(10);
         animation.setExitFadeDuration(5000);

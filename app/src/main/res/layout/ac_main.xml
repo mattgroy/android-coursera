@@ -11,11 +11,11 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/ac_main_et_text"
+        android:id="@+id/ac_main_et_query"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="@string/hint_text_enter"
+        android:hint="@string/hint_query_enter"
         android:inputType="text" />
 
     <Button
