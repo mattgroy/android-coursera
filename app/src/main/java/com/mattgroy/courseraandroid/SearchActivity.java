@@ -47,7 +47,7 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void animate(final AnimationDrawable animation) {
-        animation.setEnterFadeDuration(5);
+        animation.setEnterFadeDuration(10);
         animation.setExitFadeDuration(5000);
         animation.start();
     }
